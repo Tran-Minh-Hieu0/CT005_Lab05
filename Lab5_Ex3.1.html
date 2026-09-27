@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f2f1ec">
+	<meta name="description" content="Trang giới thiệu cá nhân của Trần Minh Hiếu, MSSV B2613555.">
+	<title>Trần Minh Hiếu | Hồ sơ cá nhân</title>
+	<style>
+		:root {
+			color-scheme: light;
+			--ink: #172a2a;
+			--muted: #586663;
+			--paper: #f2f1ec;
+			--white: #fffefa;
+			--green: #176b57;
+			--lime: #d6ed79;
+			--line: #d9ddd5;
+		}
+		* { box-sizing: border-box; }
+		body {
+			margin: 0;
+			background: var(--paper);
+			color: var(--ink);
+			font-family: 'Segoe UI', Tahoma, sans-serif;
+			line-height: 1.6;
+		}
+		a { color: inherit; }
+		.site-header, main, .site-footer { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+		.site-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 22px 0;
+			border-bottom: 1px solid var(--line);
+		}
+		.brand { font-size: 0.9rem; font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; }
+		.header-label { color: var(--muted); font-size: 0.85rem; }
+		.hero {
+			display: grid;
+			grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+			gap: 56px;
+			align-items: center;
+			padding: 82px 0 76px;
+			animation: reveal 650ms ease-out both;
+		}
+		.eyebrow { color: var(--green); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+		h1, h2, p { margin-top: 0; }
+		h1 {
+			max-width: 720px;
+			margin-bottom: 20px;
+			font-family: Georgia, 'Times New Roman', serif;
+			font-size: clamp(3rem, 7vw, 6.4rem);
+			font-weight: 500;
+			line-height: 0.98;
+		}
+		.hero-copy { max-width: 560px; color: var(--muted); font-size: 1.08rem; }
+		.identity-panel {
+			position: relative;
+			padding: 30px;
+			background: var(--green);
+			color: white;
+			box-shadow: 12px 12px 0 var(--lime);
+		}
+		.identity-panel::before {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			width: 34px;
+			height: 34px;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			border-radius: 50%;
+			content: '';
+		}
+		.identity-label { margin-bottom: 5px; color: #d5e8df; font-size: 0.82rem; }
+		.identity-value { margin-bottom: 24px; font-size: 1.3rem; font-weight: 700; overflow-wrap: anywhere; }
+		.identity-value:last-child { margin-bottom: 0; }
+		.section { padding: 54px 0 64px; border-top: 1px solid var(--line); }
+		.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+		h2 { margin-bottom: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 2rem; font-weight: 500; }
+		.section-note { margin-bottom: 0; color: var(--muted); font-size: 0.92rem; }
+		.document-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+		.button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 44px;
+			padding: 9px 16px;
+			border: 1px solid var(--green);
+			background: var(--green);
+			color: white;
+			font-size: 0.9rem;
+			font-weight: 700;
+			text-decoration: none;
+		}
+		.button-secondary { background: transparent; color: var(--green); }
+		.button:hover { filter: brightness(0.9); }
+		.pdf-frame {
+			display: block;
+			width: 100%;
+			height: min(76vh, 760px);
+			min-height: 420px;
+			margin-top: 22px;
+			border: 1px solid var(--line);
+			background: var(--white);
+		}
+		.project-image {
+			display: block;
+			width: 100%;
+			max-height: 620px;
+			object-fit: contain;
+			object-position: left top;
+			border: 1px solid var(--line);
+			background: var(--white);
+		}
+		.project-caption { margin: 12px 0 0; color: var(--muted); font-size: 0.9rem; }
+		.shorts-layout {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) 280px;
+			gap: 42px;
+			align-items: center;
+		}
+		.shorts-frame {
+			display: block;
+			width: 100%;
+			max-width: 360px;
+			aspect-ratio: 9 / 16;
+			justify-self: center;
+			border: 0;
+			background: #111;
+		}
+		.shorts-copy { color: var(--muted); }
+		.shorts-copy p { margin-bottom: 18px; }
+		.site-footer {
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
+			padding: 22px 0 30px;
+			border-top: 1px solid var(--line);
+			color: var(--muted);
+			font-size: 0.84rem;
+		}
+		.site-footer p { margin: 0; }
+		@keyframes reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+		@media (max-width: 700px) {
+			.site-header, main, .site-footer { width: min(100% - 36px, 560px); }
+			.hero { grid-template-columns: 1fr; gap: 30px; padding: 58px 0 52px; }
+			h1 { font-size: clamp(3rem, 14vw, 5rem); }
+			.identity-panel { max-width: 440px; }
+			.section { padding: 42px 0 48px; }
+			.section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+			.pdf-frame { height: 68vh; min-height: 360px; }
+			.shorts-layout { grid-template-columns: 1fr; gap: 24px; }
+			.shorts-copy { max-width: 440px; }
+			.site-footer { flex-direction: column; gap: 4px; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+		}
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="#top" aria-label="Trang chủ - Trần Minh Hiếu">TMH<span aria-hidden="true">.</span></a>
+		<span class="header-label">Hồ sơ cá nhân · Lab 05</span>
+	</header>
+
+	<main id="top">
+		<section class="hero" aria-labelledby="page-title">
+			<div>
+				<p class="eyebrow">Xin chào, mình là</p>
+				<h1 id="page-title">Trần Minh Hiếu</h1>
+				<p class="hero-copy">Chào mừng bạn đến với trang giới thiệu cá nhân của mình. Tại đây có thông tin sinh viên và các tài liệu học tập được đính kèm.</p>
+			</div>
+			<aside class="identity-panel" aria-label="Thông tin sinh viên">
+				<p class="identity-label">Họ và tên</p>
+				<p class="identity-value">Trần Minh Hiếu</p>
+				<p class="identity-label">Mã số sinh viên</p>
+				<p class="identity-value">B2613555</p>
+			</aside>
+		</section>
+
+		<section class="section" aria-labelledby="document-title">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">Tài liệu đính kèm</p>
+					<h2 id="document-title">Lab05_Ex1.2.pdf</h2>
+				</div>
+				<div class="document-actions">
+					<a class="button" href="Lab05_Ex1.2.pdf" target="_blank" rel="noopener">Mở PDF</a>
+					<a class="button button-secondary" href="Lab05_Ex1.2.pdf" download>Tải xuống</a>
+				</div>
+			</div>
+			<iframe class="pdf-frame" src="Lab05_Ex1.2.pdf" title="Tài liệu Lab05 Ex1.2">
+				<p>Trình duyệt không hỗ trợ xem PDF. <a href="Lab05_Ex1.2.pdf">Mở tài liệu Lab05_Ex1.2.pdf</a>.</p>
+			</iframe>
+		</section>
+
+		<section class="section" aria-labelledby="shorts-title">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">Video</p>
+					<h2 id="shorts-title">YouTube Shorts</h2>
+				</div>
+			</div>
+			<div class="shorts-layout">
+				<iframe class="shorts-frame"
+					src="https://www.youtube.com/embed/FuC2Jf0Z_O4"
+					title="YouTube Shorts"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen
+					loading="lazy"
+					referrerpolicy="strict-origin-when-cross-origin"></iframe>
+				<div class="shorts-copy">
+					<p>Xem video trực tiếp trên YouTube nếu trình phát không tải được.</p>
+					<a class="button button-secondary" href="https://youtube.com/shorts/FuC2Jf0Z_O4" target="_blank" rel="noopener">Mở trên YouTube</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" aria-labelledby="project-title">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">Sản phẩm học tập</p>
+					<h2 id="project-title">Công nghệ số trong học tập</h2>
+				</div>
+				<p class="section-note">Infographic từ bài thực hành Lab 05</p>
+			</div>
+			<img class="project-image" src="Lab05_Ex2.1.png" alt="Infographic về lợi ích của công nghệ số trong học tập" loading="lazy">
+			<p class="project-caption">Tài liệu hình ảnh được giữ lại từ trang ban đầu.</p>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<p>Trần Minh Hiếu · B2613555</p>
+		<p>Trang giới thiệu cá nhân</p>
+	</footer>
+</body>
+</html>
